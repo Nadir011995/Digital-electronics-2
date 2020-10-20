@@ -26,6 +26,12 @@ void GPIO_config_input_pullup(volatile uint8_t *reg_name, uint8_t pin_num)
     *reg_name = *reg_name | (1<<pin_num);   // Data Register 
 }
 
+void GPIO_config_input_nopull(volatile uint8_t *reg_name, uint8_t pin_num)
+{
+  *reg_name = *reg_name & ~(1<<pin_num);  // Data Direction Register
+  *reg_name++;                    // Change pointer to Data Register(if we increment the pointer then the pointer point the PORT register)
+  *reg_name = *reg_name & ~ (1<<pin_num);   // Data Register
+}
 /*--------------------------------------------------------------------*/
 void GPIO_write_low(volatile uint8_t *reg_name, uint8_t pin_num)
 {
