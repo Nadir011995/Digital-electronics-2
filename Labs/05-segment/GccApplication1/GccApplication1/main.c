@@ -92,8 +92,7 @@ ISR(TIMER1_OVF_vect)
 	 //  SEG_clear();
  	static uint8_t pos = 0;//we use static variable to keep remember the current position
  	
-	 //	uint8_t first_display= 0;
- 	 //	uint8_t second_display=1;
+	
 		  
 	
  		uint8_t display = 0; 

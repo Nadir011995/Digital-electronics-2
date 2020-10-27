@@ -296,8 +296,8 @@ ISR(TIMER1_OVF_vect)
  184:	bf 93       	push	r27
  186:	ef 93       	push	r30
  188:	ff 93       	push	r31
-	 //	uint8_t first_display= 0;
- 	 //	uint8_t second_display=1;
+ 	
+	
 		  
 	
  		uint8_t display = 0; 

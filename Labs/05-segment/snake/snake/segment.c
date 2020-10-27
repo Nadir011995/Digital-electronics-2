@@ -31,7 +31,7 @@ uint8_t segment_value[] = {
 	0b11101111,     // Segment D
 	0b11110111,     // Segment E
 	0b11111011,     // Segment F
-	0b01111111,     // Segment A 
+
   
 };
 
