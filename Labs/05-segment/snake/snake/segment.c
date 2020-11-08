@@ -68,7 +68,7 @@ void SEG_update_shift_regs(uint8_t segments, uint8_t position)
 	 else if(clearsegments==1){
 		 segments=0b11111111;// in order to Turn off the all segments we set all bit 1 because of aktiv low connection
 		 
-		  }
+		 }
     // Pull LATCH, CLK, and DATA low
 	GPIO_write_low(&PORTD,SEGMENT_LATCH);	// LATCH
 	GPIO_write_low(&PORTD,SEGMENT_CLK);		// CLK

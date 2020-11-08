@@ -31,8 +31,9 @@ uint8_t cnt1 = 0;
 
 int main(void)
 {	
-    // Configure SSD signals
-    SEG_init();
+	
+	^ // Configure SSD signals
+		SEG_init();
 
 
  
@@ -44,7 +45,7 @@ int main(void)
 
     // Enables interrupts by setting the global interrupt mask
 	
-	 sei();
+		sei();
     // Infinite loop
     while (1)
     {
