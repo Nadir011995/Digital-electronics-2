@@ -2,8 +2,6 @@
 
 ## Synchronize git
 
-Use [git commands](https://github.com/tomas-fryza/Digital-electronics-2/wiki/Git-useful-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
-
 
 ## Experiments on your own
 
@@ -37,10 +35,10 @@ Extra. Program the [PWM generator](https://www.analogictips.com/pulse-width-modu
 | 0 | 1 | input | Yes | Tri-state (Hi-Z) |
 | 1 | 0 | Output | No | Output Low (Sink) |
 | 1 | 1 | Output | No | Output High (Source) |    
- 
-    
+
+
 ### * Table with input/output pins available on ATmega328P,
-    
+
 | **Port** | **Pin** | **Input/output usage?** |
 | :-: | :-: | :-- |
 | A | x | Microcontroller ATmega328P does not contain port A |
@@ -68,7 +66,7 @@ Extra. Program the [PWM generator](https://www.analogictips.com/pulse-width-modu
 | D | 5 | Yes (Arduino pin ~5) |
 | D | 6 | Yes (Arduino pin ~6) |
 | D  | 7 | Yes (Arduino pin 7) |
-    
+
 ###  * code with two LEDs and a push button,
 
 /***********************************************************************
@@ -107,32 +105,32 @@ int main(void)
     DDRB = DDRB | (1<<LED_GREEN);
     // ...and turn LED off in Data Register
     PORTB = PORTB & ~(1<<LED_GREEN);
-	
+
 	/*RED LED*/
 	DDRC = DDRC | (1<<LED_RED);
  	PORTC = PORTC & ~(1<<LED_RED);
 
     DDRD = DDRD & ~(1<<BTN); //Turn OFF
 	PORTD = PORTD | (1<<BTN);
-	
+
 
     // Infinite loop
     while (1)
     {
         // Pause several milliseconds
         _delay_ms(BLINK_DELAY);
-		
+
 		// WRITE  YOUR CODE HERE 
 		if (bit_is_clear(PIND, BTN))
 		{
-			
-		
+
+
        // WRITE YOU CODE HERE
 	   PORTB = PORTB ^ (1<<LED_GREEN);
 	   PORTC = PORTC ^ (1<<LED_RED);
 		}
-	  
-	   
+
+
     }
 
     // Will never reach this
@@ -191,30 +189,30 @@ int main(void)
  */
 int main(void)
 {
-   
-    
+
+
     DDRB = DDRB | (1<<LED_GREEN);
     DDRB = DDRB | (1<<LED_ORANGE); 
     DDRB = DDRB | (1<<LED_BLUE);
     DDRB = DDRB | (1<<LED_YELLOW);
     DDRC = DDRC | (1 << LED_RED );  
-   	
-	  
+
+
 	PORTB = PORTB & ~(1<<LED_GREEN);
         PORTB = PORTB & ~(1<<LED_ORANGE);
         PORTB = PORTB & ~(1<<LED_BLUE);
    	PORTB = PORTB & ~(1<<LED_YELLOW);
 	PORTC = PORTC & ~(1<<LED_RED);   
-	   
-	   
+
+
 	   DDRD = DDRD & ~(1<<BTN); //Turn OFF
 	   PORTD = PORTD | (1<<BTN);
- 
+
     // Infinite loop
     while (1)
     {
         // Pause several milliseconds
-    
+
 //1	
 if (bit_is_clear(PIND, BTN))
 	{
@@ -275,13 +273,17 @@ _delay_ms(50);
 
 
 
-	
+
 	}
     // Will never reach this
     return 0;
 }
 
 
+
+
+
+Use [git commands](https://github.com/tomas-fryza/Digital-electronics-2/wiki/Git-useful-commands) to add, commit, and push all local changes to your remote repository. Check the repository at GitHub web page for changes.
 
 
 The deadline for submitting the task is the day before the next laboratory exercise. Use [BUT e-learning](https://moodle.vutbr.cz/) web page and submit a single PDF file.
