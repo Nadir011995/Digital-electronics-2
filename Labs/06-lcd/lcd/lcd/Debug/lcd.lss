@@ -405,30 +405,30 @@ int main(void)
  250:	0e 94 a4 00 	call	0x148	; 0x148 <lcd_putc>
  
 
-     // Configure 8-bit Timer/Counter2 for Stopwatch
-     // Enable interrupt and set the overflow prescaler to 16 ms
+	// Configure 8-bit Timer/Counter2 for Stopwatch
+	// Enable interrupt and set the overflow prescaler to 16 ms
 
-	 TIM2_overflow_16ms();
+	TIM2_overflow_16ms();
  254:	e1 eb       	ldi	r30, 0xB1	; 177
  256:	f0 e0       	ldi	r31, 0x00	; 0
  258:	80 81       	ld	r24, Z
  25a:	87 60       	ori	r24, 0x07	; 7
  25c:	80 83       	st	Z, r24
-	 TIM2_overflow_interrupt_enable();
+	TIM2_overflow_interrupt_enable();
  25e:	e0 e7       	ldi	r30, 0x70	; 112
  260:	f0 e0       	ldi	r31, 0x00	; 0
  262:	80 81       	ld	r24, Z
  264:	81 60       	ori	r24, 0x01	; 1
  266:	80 83       	st	Z, r24
 
-     TIM0_overflow_16ms();
+	TIM0_overflow_16ms();
  268:	85 b5       	in	r24, 0x25	; 37
  26a:	8d 7f       	andi	r24, 0xFD	; 253
  26c:	85 bd       	out	0x25, r24	; 37
  26e:	85 b5       	in	r24, 0x25	; 37
  270:	85 60       	ori	r24, 0x05	; 5
  272:	85 bd       	out	0x25, r24	; 37
-	 TIM0_overflow_interrupt_enable();
+	TIM0_overflow_interrupt_enable();
  274:	ee e6       	ldi	r30, 0x6E	; 110
  276:	f0 e0       	ldi	r31, 0x00	; 0
  278:	80 81       	ld	r24, Z
@@ -848,7 +848,6 @@ ISR(TIMER0_OVF_vect)
  4de:	ca e0       	ldi	r28, 0x0A	; 10
 			while(i < 10) 
 			{
-				
 				
 				lcd_putc(' ');
  4e0:	80 e2       	ldi	r24, 0x20	; 32

@@ -43,9 +43,9 @@ uint8_t customChar[] = {
 	// addr 5
 	0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111, 0b11111,
 	// left bracket for the designing
-    0b01111,0b01000, 0b01000, 0b01000, 0b01000, 0b01000, 0b01111, 0b00000,
+	0b01111,0b01000, 0b01000, 0b01000, 0b01000, 0b01000, 0b01111, 0b00000,
 	// right bracket for the designing
-    0b01111, 0b00001, 0b00001, 0b00001, 0b00001, 0b00001, 0b01111, 0b00000
+	0b01111, 0b00001, 0b00001, 0b00001, 0b00001, 0b00001, 0b01111, 0b00000
 
 };
 
@@ -87,14 +87,14 @@ int main(void)
  
  
 
-     // Configure 8-bit Timer/Counter2 for Stopwatch
-     // Enable interrupt and set the overflow prescaler to 16 ms
+	// Configure 8-bit Timer/Counter2 for Stopwatch
+	// Enable interrupt and set the overflow prescaler to 16 ms
 
-	 TIM2_overflow_16ms();
-	 TIM2_overflow_interrupt_enable();
+	TIM2_overflow_16ms();
+	TIM2_overflow_interrupt_enable();
 
-     TIM0_overflow_16ms();
-	 TIM0_overflow_interrupt_enable();
+	TIM0_overflow_16ms();
+	TIM0_overflow_interrupt_enable();
 
      // Enables interrupts by setting the global interrupt mask
      sei();
