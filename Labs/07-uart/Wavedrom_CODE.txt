@@ -1,0 +1,21 @@
+{signal: [
+  
+  {},        
+  {},
+  {},
+  {name: 'SIGNAL',  wave: 'h...l..hl..hlh.lhlhl..h...l.hl.h.lh.....'},
+  {},
+  {name: '7O2',   wave: '2...3444444453334444444533344444445332..', data: ['idle','start', 'LSB', 'Bit1', 'Bit2', 'Bit3', 'Bit4', 'Bit5', 'MSB', 'Parity', 'Stop','Stop','start','LSB', 'Bit1', 'Bit2', 'Bit3', 'Bit4', 'Bit5', 'MSB', 'Parity', 'Stop','Stop','start', 'LSB', 'Bit1', 'Bit2', 'Bit3', 'Bit4', 'Bit5', 'MSB', 'Parity', 'Stop','Stop','idle']},
+  {},
+
+] ,
+
+  head: { 
+    text: '                                                                                                                               D                                                                                                                               E                                                                                                           2                                                                                                                                                         ',
+  },                                    
+  foot: {
+  text: 'BAUDRATE 4800 ' ,
+   
+  },
+
+}
