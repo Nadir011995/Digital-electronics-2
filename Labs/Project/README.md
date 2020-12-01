@@ -28,7 +28,7 @@ In order for this application of the door lock system to work, we need:
 
 #### Circuit Diagram
 
-![SimulIDE](Images/Circuit_diagramm.png)
+![SimulIDE](Images/Completed_circuit.png)
 
 
 ## Software
@@ -39,7 +39,7 @@ In order for this application of the door lock system to work, we need:
 
 ## Concept Presentation
 #### Flowchart Diagram
-![Flowchar](Images/Flowchart1.png)
+![Flowchar](Images/Flowchar.png)
 
 
 #### From the past laboratories we can use these Libraries, for example:
