@@ -62,6 +62,11 @@ In order for this application of the door lock system to work, we need:
 * TIMER1_OVF_vect
 * TIMER3_OVF_vect
 
+#### We will be using probably these interrupt handlers:
+
+* TIMER0_OVF_vect
+* TIMER1_OVF_vect
+* TIMER3_OVF_vect
 
 
 
