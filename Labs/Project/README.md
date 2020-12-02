@@ -61,7 +61,7 @@ In order for this application of the door lock system to work, we need:
 #### We will be using probably these interrupt handlers:
 
 * Timer overflow
-* ADC
+
 
 
 
