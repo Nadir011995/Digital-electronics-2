@@ -66,45 +66,45 @@ ________________________________________________________________________________
 #### Libraries from previous labs:
 
 * [gpio.c](Door_lock_system/Door_lock_system/gpio.c) 
-* [gpio.h](Door_Lock_System/Door_Lock_System/gpio.h) 
-* [lcd.c](Door_Lock_System/Door_Lock_System/lcd.c) 
-* [lcd.h](Door_Lock_System/Door_Lock_System/lcd.h)
-* [lcd_definitons.h](Door_Lock_System/Door_Lock_System/lcd_definitons.h)
-* [timer.h](Door_Lock_System/Door_Lock_System/timer.h)
-* [uart.c](Door_Lock_System/Door_Lock_System/uart.c)
-* [uart.h](Door_Lock_System/Door_Lock_System/uart.h)
+* [gpio.h](Door_lock_system/Door_Lock_system/gpio.h) 
+* [lcd.c](Door_lock_system/Door_lock_system/lcd.c) 
+* [lcd.h](Door_lock_system/Door_lock_system/lcd.h)
+* [lcd_definitons.h](Door_Lock_system/Door_lock_system/lcd_definitons.h)
+* [timer.h](Door_Lock_system/Door_lock_system/timer.h)
+* [uart.c](Door_Lock_system/Door_lock_system/uart.c)
+* [uart.h](Door_Lock_system/Door_Lock_system/uart.h)
 
 
 
 #### Own librarys for keypad scanning:
 
-* [Keypad.h](Door_Lock_System/Door_Lock_System/keypad.h)
-* [Keypad.c](Door_Lock_System/Door_Lock_System/keypad.c)
+* [Keypad.h](Door_lock_system/Door_lock_system/keypad.h)
+* [Keypad.c](Door_lock_system/Door_lock_system/keypad.c)
 
 
 
 #### The functions in the keypad library:
 
 
-* [void keypad()](Door_Lock_System/Door_Lock_System/keypad.c): There are two for loops. The outer loop is for columns and the inner loop is for rows. The pressed key will                                                                      stored in a char array variable.
+* [void keypad()](Door_lock_system/Door_lock_system/keypad.c): There are two for loops. The outer loop is for columns and the inner loop is for rows. The pressed key will                                                                      stored in a char array variable.
  
-*	[void Check_password()](Door_Lock_System/Door_Lock_System/keypad.c): The entered password will be compared with the correct passcode
+*	[void Check_password()](Door_lock_system/Door_lock_system/keypad.c): The entered password will be compared with the correct passcode
 
-*	[void Check_password_1()](Door_Lock_System/Door_Lock_System/keypad.c): The same implementation as the previous function. Here we will compare the second correct passcode.
+*	[void Check_password_1()](Door_lock_system/Door_lock_system/keypad.c): The same implementation as the previous function. Here we will compare the second correct passcode.
 
-*	[void Check_password_2()](Door_Lock_System/Door_Lock_System/keypad.c): The same implementation as the previous function. Here we will compare the second correct passcode. 
+*	[void Check_password_2()](Door_lock_system/Door_lock_system/keypad.c): The same implementation as the previous function. Here we will compare the second correct passcode. 
 
-*	[void reset()](Door_Lock_System/Door_Lock_System/keypad.c): This function is for cleaning and resetting the display. The variables are set to their initial state. The audio is deactivated.
+*	[void reset()](Door_lock_system/Door_lock_system/keypad.c): This function is for cleaning and resetting the display. The variables are set to their initial state. The audio is deactivated.
 
-*	[void entry_denied()](Door_Lock_System/Door_Lock_System/keypad.c): This function shows, the message “Wrong Password” on the display. This function operates when the entered passwords are incorrect. The audio is activated.
+*	[void entry_denied()](Door_lock_system/Door_Lock_system/keypad.c): This function shows, the message “Wrong Password” on the display. This function operates when the entered passwords are incorrect. The audio is activated.
 
-* [void entry_accepted()](Door_Lock_System/Door_Lock_System/keypad.c): If the entered password matches with the correct passcodes, this function will be operated. The message e.g “Welcome Mr. Thomas” is shown on the display. The relay will be activated. 
+* [void entry_accepted()](Door_lock_system/Door_Lock_system/keypad.c): If the entered password matches with the correct passcodes, this function will be operated. The message e.g “Welcome Mr. Thomas” is shown on the display. The relay will be activated. 
 
 #### The interrupt handlers in [main.c](Door_Lock_System/Door_Lock_System/main.c): 
 
-*	[TIMER0_OVF_vect](Door_Lock_System/Door_Lock_System/main.c): The TIM0 is enabled with a 4 millisecond overflow time. At the beginning in Interrupt Handler, there is the if statement with the condition timecheck> 100. This means that the data will be sent after 400 milliseconds via UART and to the LCD display.
+*	[TIMER0_OVF_vect](Door_lock_system/Door_lock_system/main.c): The TIM0 is enabled with a 4 millisecond overflow time. At the beginning in Interrupt Handler, there is the if statement with the condition timecheck> 100. This means that the data will be sent after 400 milliseconds via UART and to the LCD display.
 
-*	[TIMER1_OVF_vect](Door_Lock_System/Door_Lock_System/main.c):  The TIM1 is enabled with 1 second. There is also data sending via UART. This interrupt handler is created for delay. It counts down10 seconds for entering the password, 10 seconds with correct password, 1 second for "Wrong Password" is displayed and the buzzer is activated for 1 second too.
+*	[TIMER1_OVF_vect](Door_lock_system/Door_lock_system/main.c):  The TIM1 is enabled with 1 second. There is also data sending via UART. This interrupt handler is created for delay. It counts down10 seconds for entering the password, 10 seconds with correct password, 1 second for "Wrong Password" is displayed and the buzzer is activated for 1 second too.
 
 
 
