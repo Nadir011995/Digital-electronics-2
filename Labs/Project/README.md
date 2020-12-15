@@ -44,6 +44,8 @@ In order for this application of the door lock system to work, we need:
 ![Flowchar](Images/Flowchar.png)
 
 
+## Code description and simulations
+
 #### Libraries from previous labs:
 * [gpio.c](Previous_Labs_Libraries/gpio.c)
  
@@ -73,10 +75,6 @@ In order for this application of the door lock system to work, we need:
 
 
 
-
-## Code description and simulations
-
-Once the concept is approved we will start with programming!!!
 
 
 ## Video/Animation
