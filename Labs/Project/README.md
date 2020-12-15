@@ -96,11 +96,11 @@ ________________________________________________________________________________
 
 *	[void reset()](Door_lock_system/Door_lock_system/keypad.c): This function is for cleaning and resetting the display. The variables are set to their initial state. The audio is deactivated.
 
-*	[void entry_denied()](Door_lock_system/Door_Lock_system/keypad.c): This function shows, the message “Wrong Password” on the display. This function operates when the entered passwords are incorrect. The audio is activated.
+*	[void entry_denied()](Door_lock_system/Door_lock_system/keypad.c): This function shows, the message “Wrong Password” on the display. This function operates when the entered passwords are incorrect. The audio is activated.
 
-* [void entry_accepted()](Door_lock_system/Door_Lock_system/keypad.c): If the entered password matches with the correct passcodes, this function will be operated. The message e.g “Welcome Mr. Thomas” is shown on the display. The relay will be activated. 
+* [void entry_accepted()](Door_lock_system/Door_lock_system/keypad.c): If the entered password matches with the correct passcodes, this function will be operated. The message e.g “Welcome Mr. Thomas” is shown on the display. The relay will be activated. 
 
-#### The interrupt handlers in [main.c](Door_Lock_System/Door_Lock_System/main.c): 
+#### The interrupt handlers in [main.c](Door_lock_system/Door_lock_system/main.c): 
 
 *	[TIMER0_OVF_vect](Door_lock_system/Door_lock_system/main.c): The TIM0 is enabled with a 4 millisecond overflow time. At the beginning in Interrupt Handler, there is the if statement with the condition timecheck> 100. This means that the data will be sent after 400 milliseconds via UART and to the LCD display.
 
