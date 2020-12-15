@@ -24,7 +24,8 @@ ________________________________________________________________________________
 * Door unlock relay
 * Bipolar transistor_1
 * Bipolar transistor_2
-* Resistor 1.2kOhm
+* Resistor 1.2 kOhm
+* Resistor 500 Ohm
 * Audio output (Speaker)
 * Display (Hd44780)
 * 12V Supply_1
