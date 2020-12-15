@@ -933,17 +933,17 @@ int main(void)
  586:	90 e0       	ldi	r25, 0x00	; 0
  588:	0e 94 70 00 	call	0xe0	; 0xe0 <GPIO_write_low>
 	
-	GPIO_config_output(&DDRD, 0);
+    GPIO_config_output(&DDRD, 0);
  58c:	60 e0       	ldi	r22, 0x00	; 0
  58e:	8a e2       	ldi	r24, 0x2A	; 42
  590:	90 e0       	ldi	r25, 0x00	; 0
  592:	0e 94 53 00 	call	0xa6	; 0xa6 <GPIO_config_output>
-	GPIO_config_output(&DDRD, 1);
+    GPIO_config_output(&DDRD, 1);
  596:	61 e0       	ldi	r22, 0x01	; 1
  598:	8a e2       	ldi	r24, 0x2A	; 42
  59a:	90 e0       	ldi	r25, 0x00	; 0
  59c:	0e 94 53 00 	call	0xa6	; 0xa6 <GPIO_config_output>
-	GPIO_config_output(&DDRD, 2);	
+    GPIO_config_output(&DDRD, 2);	
  5a0:	62 e0       	ldi	r22, 0x02	; 2
  5a2:	8a e2       	ldi	r24, 0x2A	; 42
  5a4:	90 e0       	ldi	r25, 0x00	; 0
@@ -990,7 +990,7 @@ int main(void)
 	
     // Enable interrupt and set the overflow prescaler to 1 s
     
-	TIM1_overflow_1s();
+    TIM1_overflow_1s();
  5e8:	e1 e8       	ldi	r30, 0x81	; 129
  5ea:	f0 e0       	ldi	r31, 0x00	; 0
  5ec:	80 81       	ld	r24, Z

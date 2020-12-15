@@ -54,9 +54,9 @@ int main(void)
 	GPIO_config_output(&DDRC, 5);
 	GPIO_write_low(&PORTC,5);
 	
-	GPIO_config_output(&DDRD, 0);
-	GPIO_config_output(&DDRD, 1);
-	GPIO_config_output(&DDRD, 2);	
+    GPIO_config_output(&DDRD, 0);
+    GPIO_config_output(&DDRD, 1);
+    GPIO_config_output(&DDRD, 2);	
     
     
     GPIO_config_input_nopull(&DDRB, 2);
@@ -72,7 +72,7 @@ int main(void)
 	
     // Enable interrupt and set the overflow prescaler to 1 s
     
-	TIM1_overflow_1s();
+    TIM1_overflow_1s();
     TIM1_overflow_interrupt_enable();
 
     // Initialize UART to asynchronous, 8N1, 9600
