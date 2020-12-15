@@ -73,7 +73,7 @@ In order for this application of the door lock system to work, we need:
 
 * [main.c](main.c)
 
-#### The functions in our own the keypad library:
+#### The functions in the keypad library:
 
 *	[void keypad()](Keypad.c): The pressed keypad is scanned and stored in a char array variable.
 *	[void Check_password()](Keypad.c): The entered password will be compared with the correct passcode
