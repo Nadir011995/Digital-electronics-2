@@ -105,7 +105,7 @@ ________________________________________________________________________________
 
 *	[TIMER0_OVF_vect](Door_Lock_System/Door_Lock_System/main.c): The TIM0 is enabled with a 4 millisecond overflow time. At the beginning in Interrupt Handler, there is the if statement with the condition timecheck> 100. This means that the data will be sent after 400 milliseconds via UART and to the LCD display.
 
-*	[TIMER1_OVF_vect](Door_Lock_System/Door_Lock_System/main.c):  The TIM1 is enabled with 1 second. There is also data sending via UART. This interrupt handler is created for delay. It displays from 9 to 0 seconds for entering the password, the same with the correct password. The string "Door closed" will stay 3 seconds. The "Wrong Password" will stay for 1 second and the buzzer is activated for 1 second.
+*	[TIMER1_OVF_vect](Door_Lock_System/Door_Lock_System/main.c):  The TIM1 is enabled with 1 second. There is also data sending via UART. This interrupt handler is created for delay. It displays time (from 9 until 0) and decreases it by 1 after every 1 second (the position of the timer is bottom right corner). When the time will reach 0 it will reset the whole system in both cases (Time limit for entering the password, and time limit in which the door is opened).
 
 
 
