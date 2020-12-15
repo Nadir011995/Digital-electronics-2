@@ -66,7 +66,7 @@ ________________________________________________________________________________
 #### Libraries from previous labs:
 
 * [gpio.c](Door_lock_system/Door_lock_system/gpio.c) 
-* [gpio.h](Door_lock_system/Door_Lock_system/gpio.h) 
+* [gpio.h](Door_lock_system/Door_lock_system/gpio.h) 
 * [lcd.c](Door_lock_system/Door_lock_system/lcd.c) 
 * [lcd.h](Door_lock_system/Door_lock_system/lcd.h)
 * [lcd_definitons.h](Door_Lock_system/Door_lock_system/lcd_definitons.h)
