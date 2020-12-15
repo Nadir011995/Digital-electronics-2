@@ -48,7 +48,7 @@ int main(void)
     lcd_puts ("Enter Password");
     lcd_gotoxy(position, 1);
 	
-	// Setting output pins and initializing to low value
+    // Setting output pins and initializing to low value
     GPIO_config_output(&DDRC, 3);
     GPIO_write_low(&PORTC,3);
     GPIO_config_output(&DDRC, 5);
@@ -66,12 +66,11 @@ int main(void)
     
 
    
-	// Timer 0 interrupt enabling
-	TIM0_overflow_4ms();
-	TIM0_overflow_interrupt_enable();
+    // Timer 0 interrupt enabling
+    TIM0_overflow_4ms();
+    TIM0_overflow_interrupt_enable();
 	
     // Enable interrupt and set the overflow prescaler to 1 s
-    
     TIM1_overflow_1s();
     TIM1_overflow_interrupt_enable();
 

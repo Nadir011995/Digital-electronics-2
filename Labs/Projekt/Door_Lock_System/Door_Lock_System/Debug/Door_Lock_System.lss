@@ -911,7 +911,7 @@ int main(void)
  55c:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <position>
  560:	0e 94 3e 02 	call	0x47c	; 0x47c <lcd_gotoxy>
 	
-	// Setting output pins and initializing to low value
+    // Setting output pins and initializing to low value
     GPIO_config_output(&DDRC, 3);
  564:	63 e0       	ldi	r22, 0x03	; 3
  566:	87 e2       	ldi	r24, 0x27	; 39
@@ -973,15 +973,15 @@ int main(void)
     
 
    
-	// Timer 0 interrupt enabling
-	TIM0_overflow_4ms();
+    // Timer 0 interrupt enabling
+    TIM0_overflow_4ms();
  5d2:	85 b5       	in	r24, 0x25	; 37
  5d4:	8c 7f       	andi	r24, 0xFC	; 252
  5d6:	85 bd       	out	0x25, r24	; 37
  5d8:	85 b5       	in	r24, 0x25	; 37
  5da:	84 60       	ori	r24, 0x04	; 4
  5dc:	85 bd       	out	0x25, r24	; 37
-	TIM0_overflow_interrupt_enable();
+    TIM0_overflow_interrupt_enable();
  5de:	ee e6       	ldi	r30, 0x6E	; 110
  5e0:	f0 e0       	ldi	r31, 0x00	; 0
  5e2:	80 81       	ld	r24, Z
@@ -989,7 +989,6 @@ int main(void)
  5e6:	80 83       	st	Z, r24
 	
     // Enable interrupt and set the overflow prescaler to 1 s
-    
     TIM1_overflow_1s();
  5e8:	e1 e8       	ldi	r30, 0x81	; 129
  5ea:	f0 e0       	ldi	r31, 0x00	; 0
