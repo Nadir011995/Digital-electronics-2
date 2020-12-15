@@ -49,10 +49,10 @@ int main(void)
     lcd_gotoxy(position, 1);
 	
 	// Setting output pins and initializing to low value
-	GPIO_config_output(&DDRC, 3);
-	GPIO_write_low(&PORTC,3);
-	GPIO_config_output(&DDRC, 5);
-	GPIO_write_low(&PORTC,5);
+    GPIO_config_output(&DDRC, 3);
+    GPIO_write_low(&PORTC,3);
+    GPIO_config_output(&DDRC, 5);
+    GPIO_write_low(&PORTC,5);
 	
     GPIO_config_output(&DDRD, 0);
     GPIO_config_output(&DDRD, 1);

@@ -912,22 +912,22 @@ int main(void)
  560:	0e 94 3e 02 	call	0x47c	; 0x47c <lcd_gotoxy>
 	
 	// Setting output pins and initializing to low value
-	GPIO_config_output(&DDRC, 3);
+    GPIO_config_output(&DDRC, 3);
  564:	63 e0       	ldi	r22, 0x03	; 3
  566:	87 e2       	ldi	r24, 0x27	; 39
  568:	90 e0       	ldi	r25, 0x00	; 0
  56a:	0e 94 53 00 	call	0xa6	; 0xa6 <GPIO_config_output>
-	GPIO_write_low(&PORTC,3);
+    GPIO_write_low(&PORTC,3);
  56e:	63 e0       	ldi	r22, 0x03	; 3
  570:	88 e2       	ldi	r24, 0x28	; 40
  572:	90 e0       	ldi	r25, 0x00	; 0
  574:	0e 94 70 00 	call	0xe0	; 0xe0 <GPIO_write_low>
-	GPIO_config_output(&DDRC, 5);
+    GPIO_config_output(&DDRC, 5);
  578:	65 e0       	ldi	r22, 0x05	; 5
  57a:	87 e2       	ldi	r24, 0x27	; 39
  57c:	90 e0       	ldi	r25, 0x00	; 0
  57e:	0e 94 53 00 	call	0xa6	; 0xa6 <GPIO_config_output>
-	GPIO_write_low(&PORTC,5);
+    GPIO_write_low(&PORTC,5);
  582:	65 e0       	ldi	r22, 0x05	; 5
  584:	88 e2       	ldi	r24, 0x28	; 40
  586:	90 e0       	ldi	r25, 0x00	; 0
