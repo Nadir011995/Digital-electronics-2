@@ -73,6 +73,22 @@ In order for this application of the door lock system to work, we need:
 
 * [main.c](main.c)
 
+#### The functions in our own the keypad library:
+
+*	[void keypad()]: The pressed keypad is scanned and stored in a char array variable.
+*	void Check_password(): The entered password will be compared with the correct passcode
+*	void Check_password_1(): The same implementation as the previous function. Here we will compare the second correct passcode. 
+*	void Check_password_2(): The same implementation as the previous function. Here we will compare the second correct passcode. 
+*	void reset(): This function is for cleaning and resetting the display. The variables are set to their initial state. The audio is deactivated.
+*	void entry_denied(): This function shows, the message “Wrong Password” on the display. This function operates when the entered passwords are incorrect. The audio is activated.
+* void entry_accepted(): If the entered password matches with the correct passcodes, this function will be operated. The message e.g “Welcome Mr. Thomas” is shown on the display. The relay will be activated. 
+
+#### The interrupt handlers in main.c: 
+
+*	TIMER0_OVF_vect: The TIM0 is enabled with a 4 millisecond overflow time. At the beginning in Interrupt Handler, there is the if statement with the condition timecheck> 100. This means that the data will be sent after 400 milliseconds via UART and to the LCD display.
+*	TIMER1_OVF_vect:  The TIM1 is enabled with 1 second. There is also data sending via UART. This interrupt handler is created for delay. It counts down10 seconds for entering the password, 10 seconds with correct password, 1 second for "Wrong Password" is displayed and the buzzer is activated for 1 second too.
+
+
 
 
 
