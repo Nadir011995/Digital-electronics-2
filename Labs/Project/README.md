@@ -44,23 +44,32 @@ In order for this application of the door lock system to work, we need:
 ![Flowchar](Images/Flowchar.png)
 
 
-#### From the past laboratories we can use these Libraries, for example:
-* gpio.h
-* gpio.c
-* timer.h 
-* uart.h 
-* uart.c
-* lcd.h
-* lcd_definitons.h
-* lcd.c
+#### Libraries from previous labs:
+* [gpio.c](Previous_Labs_Libraries/gpio.c)
+ 
+* [gpio.h](Previous_Labs_Libraries/gpio.h)
+ 
+* [lcd.c](Previous_Labs_Libraries/lcd.c)
+ 
+* [lcd.h](Previous_Labs_Libraries/lcd.h)
 
-#### Own Library for keypad scanning
-* Keypad.h
-* Keypad.c
+* [lcd_definitons.h](Previous_Labs_Libraries/lcd_definitons.h)
 
-#### We will be using probably these interrupt handlers:
+* [timer.h](Previous_Labs_Libraries/timer.h)
 
-* Timer overflow
+* [uart.c](Previous_Labs_Libraries/uart.c)
+ 
+* [uart.h](Previous_Labs_Libraries/uart.h)
+
+
+
+#### Own librarys for keypad scanning:
+
+* [Keypad.h](Keypad.h)
+
+* [Keypad.c](Keypad.c)
+
+* [main.c](main.c)
 
 
 
