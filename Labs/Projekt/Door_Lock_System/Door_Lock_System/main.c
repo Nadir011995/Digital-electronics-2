@@ -29,9 +29,9 @@ int correct_2 = 0;
 int count_1 = 0; 
 int count = 0; // Count for total number of keys for password
 char pass[4]; // Entered values will be stored here
-int password[4] = {2,3,4,5}; // Password for Mr. Thomas
-int password_1[4] = {4,3,4,5}; // Password for Mr. Al-Wattar
-int password_2[4] = {1,2,3,4}; // Password for Mr. Shala
+int password[4] = {2,3,4,5}; // Passcode for Mr. Thomas
+int password_1[4] = {4,3,4,5}; // Passcode for Mr. Al-Wattar
+int password_2[4] = {1,2,3,4}; // Passcode for Mr. Shala
 int position = 5; // Initial position on display
 int time_check = 0;
 int countdown = 9; // Countdown for closing door
@@ -57,9 +57,15 @@ int main(void)
 	GPIO_config_output(&DDRD, 0);
 	GPIO_config_output(&DDRD, 1);
 	GPIO_config_output(&DDRD, 2);	
+    
+    
+    GPIO_config_input_nopull(&DDRB, 2);
+    GPIO_config_input_nopull(&DDRB, 3);
+    GPIO_config_input_nopull(&DDRB, 4);
+    GPIO_config_input_nopull(&DDRB, 5);
+    
 
-
-
+   
 	// Timer 0 interrupt enabling
 	TIM0_overflow_4ms();
 	TIM0_overflow_interrupt_enable();
