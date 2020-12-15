@@ -23,17 +23,17 @@
 
 /*----------------------------------Variables used in program-------------------------------------------*/
 
-int correct = 0; // Correct Password or not
-int correct_1 = 0;
-int correct_2 = 0;
-int count_1 = 0; 
+int correct = 0; // Correct Password or not for the 1st person
+int correct_1 = 0; // Correct Password or not for the 2nd person 
+int correct_2 = 0; // Correct Password or not for the 3rd person 
+int count_1 = 0; // Count_1 is actually a flag to check whether any key was pressed or not 
 int count = 0; // Count for total number of keys for password
 char pass[4]; // Entered values will be stored here
 int password[4] = {2,3,4,5}; // Passcode for Mr. Thomas
 int password_1[4] = {4,3,4,5}; // Passcode for Mr. Al-Wattar
 int password_2[4] = {1,2,3,4}; // Passcode for Mr. Shala
 int position = 5; // Initial position on display
-int time_check = 0;
+int time_check = 0; // Checking time in TIMER0_OVF_vect
 int countdown = 9; // Countdown for closing door
 int countdown_1 = 9; // Countdown for entering the password
 int countdown_2 = 3; // For freezing the display
@@ -54,6 +54,7 @@ int main(void)
     GPIO_config_output(&DDRC, 5);
     GPIO_write_low(&PORTC,5);
 	
+    
     GPIO_config_output(&DDRD, 0);
     GPIO_config_output(&DDRD, 1);
     GPIO_config_output(&DDRD, 2);	
@@ -65,7 +66,6 @@ int main(void)
     GPIO_config_input_nopull(&DDRB, 5);
     
 
-   
     // Timer 0 interrupt enabling
     TIM0_overflow_4ms();
     TIM0_overflow_interrupt_enable();

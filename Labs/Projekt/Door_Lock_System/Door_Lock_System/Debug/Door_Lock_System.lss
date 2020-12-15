@@ -169,9 +169,9 @@ void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num)
  110:	08 95       	ret
 
 00000112 <GPIO_read>:
+}
 
 /*--------------------------------------------------------------------*/
-/* GPIO_read */
 uint8_t GPIO_read(volatile uint8_t *reg_name, uint8_t pin_num)
 {
 	if (bit_is_set(*reg_name,pin_num))
@@ -371,9 +371,9 @@ void Check_password_1()
 {
  20c:	af ec       	ldi	r26, 0xCF	; 207
  20e:	b2 e0       	ldi	r27, 0x02	; 2
- 210:	e4 e1       	ldi	r30, 0x14	; 20
+ 210:	ec e1       	ldi	r30, 0x1C	; 28
  212:	f1 e0       	ldi	r31, 0x01	; 1
- 214:	4c e1       	ldi	r20, 0x1C	; 28
+ 214:	44 e2       	ldi	r20, 0x24	; 36
  216:	51 e0       	ldi	r21, 0x01	; 1
 	for(int i = 0; i<4; i++)
 	{
@@ -418,9 +418,9 @@ void Check_password_2()
 {
  244:	af ec       	ldi	r26, 0xCF	; 207
  246:	b2 e0       	ldi	r27, 0x02	; 2
- 248:	ec e0       	ldi	r30, 0x0C	; 12
+ 248:	e4 e1       	ldi	r30, 0x14	; 20
  24a:	f1 e0       	ldi	r31, 0x01	; 1
- 24c:	44 e1       	ldi	r20, 0x14	; 20
+ 24c:	4c e1       	ldi	r20, 0x1C	; 28
  24e:	51 e0       	ldi	r21, 0x01	; 1
 	for(int i = 0; i<4; i++)
 	{
@@ -471,16 +471,16 @@ void reset()
 	position = 5;
  28c:	85 e0       	ldi	r24, 0x05	; 5
  28e:	90 e0       	ldi	r25, 0x00	; 0
- 290:	90 93 23 01 	sts	0x0123, r25	; 0x800123 <position+0x1>
- 294:	80 93 22 01 	sts	0x0122, r24	; 0x800122 <position>
+ 290:	90 93 13 01 	sts	0x0113, r25	; 0x800113 <position+0x1>
+ 294:	80 93 12 01 	sts	0x0112, r24	; 0x800112 <position>
 	countdown = 9;
  298:	89 e0       	ldi	r24, 0x09	; 9
  29a:	90 e0       	ldi	r25, 0x00	; 0
- 29c:	90 93 21 01 	sts	0x0121, r25	; 0x800121 <countdown+0x1>
- 2a0:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <countdown>
+ 29c:	90 93 11 01 	sts	0x0111, r25	; 0x800111 <countdown+0x1>
+ 2a0:	80 93 10 01 	sts	0x0110, r24	; 0x800110 <countdown>
 	countdown_1 = 9;
- 2a4:	90 93 1f 01 	sts	0x011F, r25	; 0x80011f <countdown_1+0x1>
- 2a8:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <countdown_1>
+ 2a4:	90 93 0f 01 	sts	0x010F, r25	; 0x80010f <countdown_1+0x1>
+ 2a8:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <countdown_1>
 	time_check = 0;
  2ac:	10 92 3f 02 	sts	0x023F, r1	; 0x80023f <time_check+0x1>
  2b0:	10 92 3e 02 	sts	0x023E, r1	; 0x80023e <time_check>
@@ -521,7 +521,7 @@ void reset()
  2f8:	0e 94 50 02 	call	0x4a0	; 0x4a0 <lcd_puts>
 	lcd_gotoxy(position, 1);
  2fc:	61 e0       	ldi	r22, 0x01	; 1
- 2fe:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <position>
+ 2fe:	80 91 12 01 	lds	r24, 0x0112	; 0x800112 <position>
  302:	0e 94 3e 02 	call	0x47c	; 0x47c <lcd_gotoxy>
 	lcd_puts("     ");
  306:	8b e3       	ldi	r24, 0x3B	; 59
@@ -570,8 +570,8 @@ void entry_denied()
  34e:	90 e0       	ldi	r25, 0x00	; 0
  350:	0e 94 7d 00 	call	0xfa	; 0xfa <GPIO_write_high>
 	countdown_2 = 0;
- 354:	10 92 1d 01 	sts	0x011D, r1	; 0x80011d <countdown_2+0x1>
- 358:	10 92 1c 01 	sts	0x011C, r1	; 0x80011c <countdown_2>
+ 354:	10 92 0d 01 	sts	0x010D, r1	; 0x80010d <countdown_2+0x1>
+ 358:	10 92 0c 01 	sts	0x010C, r1	; 0x80010c <countdown_2>
 	lcd_gotoxy(15,1);
  35c:	61 e0       	ldi	r22, 0x01	; 1
  35e:	8f e0       	ldi	r24, 0x0F	; 15
@@ -908,7 +908,7 @@ int main(void)
  556:	0e 94 50 02 	call	0x4a0	; 0x4a0 <lcd_puts>
     lcd_gotoxy(position, 1);
  55a:	61 e0       	ldi	r22, 0x01	; 1
- 55c:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <position>
+ 55c:	80 91 12 01 	lds	r24, 0x0112	; 0x800112 <position>
  560:	0e 94 3e 02 	call	0x47c	; 0x47c <lcd_gotoxy>
 	
     // Setting output pins and initializing to low value
@@ -933,6 +933,7 @@ int main(void)
  586:	90 e0       	ldi	r25, 0x00	; 0
  588:	0e 94 70 00 	call	0xe0	; 0xe0 <GPIO_write_low>
 	
+    
     GPIO_config_output(&DDRD, 0);
  58c:	60 e0       	ldi	r22, 0x00	; 0
  58e:	8a e2       	ldi	r24, 0x2A	; 42
@@ -972,7 +973,6 @@ int main(void)
  5ce:	0e 94 5f 00 	call	0xbe	; 0xbe <GPIO_config_input_nopull>
     
 
-   
     // Timer 0 interrupt enabling
     TIM0_overflow_4ms();
  5d2:	85 b5       	in	r24, 0x25	; 37
@@ -1071,8 +1071,8 @@ ISR (TIMER0_OVF_vect)
  666:	91 05       	cpc	r25, r1
  668:	0c f0       	brlt	.+2      	; 0x66c <__vector_16+0x5e>
  66a:	65 c0       	rjmp	.+202    	; 0x736 <__vector_16+0x128>
- 66c:	20 91 1c 01 	lds	r18, 0x011C	; 0x80011c <countdown_2>
- 670:	30 91 1d 01 	lds	r19, 0x011D	; 0x80011d <countdown_2+0x1>
+ 66c:	20 91 0c 01 	lds	r18, 0x010C	; 0x80010c <countdown_2>
+ 670:	30 91 0d 01 	lds	r19, 0x010D	; 0x80010d <countdown_2+0x1>
  674:	23 30       	cpi	r18, 0x03	; 3
  676:	31 05       	cpc	r19, r1
  678:	09 f0       	breq	.+2      	; 0x67c <__vector_16+0x6e>
@@ -1104,7 +1104,7 @@ ISR (TIMER0_OVF_vect)
 			{
 				lcd_gotoxy(position, 1); // Position for entering password
  6a0:	61 e0       	ldi	r22, 0x01	; 1
- 6a2:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <position>
+ 6a2:	80 91 12 01 	lds	r24, 0x0112	; 0x800112 <position>
  6a6:	0e 94 3e 02 	call	0x47c	; 0x47c <lcd_gotoxy>
 				if (pass[count] != '*' && pass[count] != '#') // if (* or # is not pressed)
  6aa:	e0 91 40 02 	lds	r30, 0x0240	; 0x800240 <count>
@@ -1165,11 +1165,11 @@ ISR (TIMER0_OVF_vect)
  708:	10 92 43 02 	sts	0x0243, r1	; 0x800243 <count_1+0x1>
  70c:	10 92 42 02 	sts	0x0242, r1	; 0x800242 <count_1>
 				position++; // Next position for key
- 710:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <position>
- 714:	90 91 23 01 	lds	r25, 0x0123	; 0x800123 <position+0x1>
+ 710:	80 91 12 01 	lds	r24, 0x0112	; 0x800112 <position>
+ 714:	90 91 13 01 	lds	r25, 0x0113	; 0x800113 <position+0x1>
  718:	01 96       	adiw	r24, 0x01	; 1
- 71a:	90 93 23 01 	sts	0x0123, r25	; 0x800123 <position+0x1>
- 71e:	80 93 22 01 	sts	0x0122, r24	; 0x800122 <position>
+ 71a:	90 93 13 01 	sts	0x0113, r25	; 0x800113 <position+0x1>
+ 71e:	80 93 12 01 	sts	0x0112, r24	; 0x800112 <position>
 				count++;
  722:	80 91 40 02 	lds	r24, 0x0240	; 0x800240 <count>
  726:	90 91 41 02 	lds	r25, 0x0241	; 0x800241 <count+0x1>
@@ -1185,13 +1185,13 @@ ISR (TIMER0_OVF_vect)
  736:	04 97       	sbiw	r24, 0x04	; 4
  738:	09 f0       	breq	.+2      	; 0x73c <__vector_16+0x12e>
  73a:	48 c0       	rjmp	.+144    	; 0x7cc <__vector_16+0x1be>
- 73c:	80 91 1c 01 	lds	r24, 0x011C	; 0x80011c <countdown_2>
- 740:	90 91 1d 01 	lds	r25, 0x011D	; 0x80011d <countdown_2+0x1>
+ 73c:	80 91 0c 01 	lds	r24, 0x010C	; 0x80010c <countdown_2>
+ 740:	90 91 0d 01 	lds	r25, 0x010D	; 0x80010d <countdown_2+0x1>
  744:	03 97       	sbiw	r24, 0x03	; 3
  746:	09 f0       	breq	.+2      	; 0x74a <__vector_16+0x13c>
  748:	41 c0       	rjmp	.+130    	; 0x7cc <__vector_16+0x1be>
- 74a:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <countdown>
- 74e:	90 91 21 01 	lds	r25, 0x0121	; 0x800121 <countdown+0x1>
+ 74a:	80 91 10 01 	lds	r24, 0x0110	; 0x800110 <countdown>
+ 74e:	90 91 11 01 	lds	r25, 0x0111	; 0x800111 <countdown+0x1>
  752:	09 97       	sbiw	r24, 0x09	; 9
  754:	d9 f5       	brne	.+118    	; 0x7cc <__vector_16+0x1be>
 		{
@@ -1318,12 +1318,12 @@ ISR(TIMER1_OVF_vect) // 1 second time delay
  82e:	ff 93       	push	r31
     
     if (countdown == -1 && countdown_2 == 3) // Countdown has been completed
- 830:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <countdown>
- 834:	90 91 21 01 	lds	r25, 0x0121	; 0x800121 <countdown+0x1>
+ 830:	80 91 10 01 	lds	r24, 0x0110	; 0x800110 <countdown>
+ 834:	90 91 11 01 	lds	r25, 0x0111	; 0x800111 <countdown+0x1>
  838:	01 96       	adiw	r24, 0x01	; 1
  83a:	d9 f5       	brne	.+118    	; 0x8b2 <__vector_13+0xa4>
- 83c:	80 91 1c 01 	lds	r24, 0x011C	; 0x80011c <countdown_2>
- 840:	90 91 1d 01 	lds	r25, 0x011D	; 0x80011d <countdown_2+0x1>
+ 83c:	80 91 0c 01 	lds	r24, 0x010C	; 0x80010c <countdown_2>
+ 840:	90 91 0d 01 	lds	r25, 0x010D	; 0x80010d <countdown_2+0x1>
  844:	03 97       	sbiw	r24, 0x03	; 3
  846:	09 f0       	breq	.+2      	; 0x84a <__vector_13+0x3c>
  848:	b7 c0       	rjmp	.+366    	; 0x9b8 <__stack+0xb9>
@@ -1381,8 +1381,8 @@ ISR(TIMER1_OVF_vect) // 1 second time delay
         countdown_2 = 2;
  8a4:	82 e0       	ldi	r24, 0x02	; 2
  8a6:	90 e0       	ldi	r25, 0x00	; 0
- 8a8:	90 93 1d 01 	sts	0x011D, r25	; 0x80011d <countdown_2+0x1>
- 8ac:	80 93 1c 01 	sts	0x011C, r24	; 0x80011c <countdown_2>
+ 8a8:	90 93 0d 01 	sts	0x010D, r25	; 0x80010d <countdown_2+0x1>
+ 8ac:	80 93 0c 01 	sts	0x010C, r24	; 0x80010c <countdown_2>
  8b0:	83 c0       	rjmp	.+262    	; 0x9b8 <__stack+0xb9>
 	}
     		
@@ -1391,15 +1391,15 @@ ISR(TIMER1_OVF_vect) // 1 second time delay
  8b6:	90 91 3d 02 	lds	r25, 0x023D	; 0x80023d <__data_end+0x1>
  8ba:	01 97       	sbiw	r24, 0x01	; 1
  8bc:	79 f5       	brne	.+94     	; 0x91c <__stack+0x1d>
- 8be:	80 91 1c 01 	lds	r24, 0x011C	; 0x80011c <countdown_2>
- 8c2:	90 91 1d 01 	lds	r25, 0x011D	; 0x80011d <countdown_2+0x1>
+ 8be:	80 91 0c 01 	lds	r24, 0x010C	; 0x80010c <countdown_2>
+ 8c2:	90 91 0d 01 	lds	r25, 0x010D	; 0x80010d <countdown_2+0x1>
  8c6:	03 97       	sbiw	r24, 0x03	; 3
  8c8:	09 f0       	breq	.+2      	; 0x8cc <__vector_13+0xbe>
  8ca:	58 c0       	rjmp	.+176    	; 0x97c <__stack+0x7d>
 	{
 		if (countdown == 9) // This will display it only one time on uart
- 8cc:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <countdown>
- 8d0:	90 91 21 01 	lds	r25, 0x0121	; 0x800121 <countdown+0x1>
+ 8cc:	80 91 10 01 	lds	r24, 0x0110	; 0x800110 <countdown>
+ 8d0:	90 91 11 01 	lds	r25, 0x0111	; 0x800111 <countdown+0x1>
  8d4:	09 97       	sbiw	r24, 0x09	; 9
  8d6:	81 f4       	brne	.+32     	; 0x8f8 <__vector_13+0xea>
 		{
@@ -1426,15 +1426,15 @@ ISR(TIMER1_OVF_vect) // 1 second time delay
  8fa:	8f e0       	ldi	r24, 0x0F	; 15
  8fc:	0e 94 3e 02 	call	0x47c	; 0x47c <lcd_gotoxy>
 		lcd_putc(countdown+48); // Converting decimal value to character value (ASCII)
- 900:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <countdown>
+ 900:	80 91 10 01 	lds	r24, 0x0110	; 0x800110 <countdown>
  904:	80 5d       	subi	r24, 0xD0	; 208
  906:	0e 94 4c 02 	call	0x498	; 0x498 <lcd_putc>
 		countdown--; // decrease in a second
- 90a:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <countdown>
- 90e:	90 91 21 01 	lds	r25, 0x0121	; 0x800121 <countdown+0x1>
+ 90a:	80 91 10 01 	lds	r24, 0x0110	; 0x800110 <countdown>
+ 90e:	90 91 11 01 	lds	r25, 0x0111	; 0x800111 <countdown+0x1>
  912:	01 97       	sbiw	r24, 0x01	; 1
- 914:	90 93 21 01 	sts	0x0121, r25	; 0x800121 <countdown+0x1>
- 918:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <countdown>
+ 914:	90 93 11 01 	sts	0x0111, r25	; 0x800111 <countdown+0x1>
+ 918:	80 93 10 01 	sts	0x0110, r24	; 0x800110 <countdown>
 	}
 
 	if (count < 4 && countdown_2 == 3) // Keys pressed are less than the total length of password
@@ -1443,16 +1443,16 @@ ISR(TIMER1_OVF_vect) // 1 second time delay
  924:	84 30       	cpi	r24, 0x04	; 4
  926:	91 05       	cpc	r25, r1
  928:	4c f5       	brge	.+82     	; 0x97c <__stack+0x7d>
- 92a:	20 91 1c 01 	lds	r18, 0x011C	; 0x80011c <countdown_2>
- 92e:	30 91 1d 01 	lds	r19, 0x011D	; 0x80011d <countdown_2+0x1>
+ 92a:	20 91 0c 01 	lds	r18, 0x010C	; 0x80010c <countdown_2>
+ 92e:	30 91 0d 01 	lds	r19, 0x010D	; 0x80010d <countdown_2+0x1>
  932:	23 30       	cpi	r18, 0x03	; 3
  934:	31 05       	cpc	r19, r1
  936:	11 f5       	brne	.+68     	; 0x97c <__stack+0x7d>
 	{
 		
 		if (countdown_1 == -1) // Countdown completed
- 938:	20 91 1e 01 	lds	r18, 0x011E	; 0x80011e <countdown_1>
- 93c:	30 91 1f 01 	lds	r19, 0x011F	; 0x80011f <countdown_1+0x1>
+ 938:	20 91 0e 01 	lds	r18, 0x010E	; 0x80010e <countdown_1>
+ 93c:	30 91 0f 01 	lds	r19, 0x010F	; 0x80010f <countdown_1+0x1>
  940:	2f 3f       	cpi	r18, 0xFF	; 255
  942:	3f 4f       	sbci	r19, 0xFF	; 255
  944:	a9 f5       	brne	.+106    	; 0x9b0 <__stack+0xb1>
@@ -1473,20 +1473,20 @@ ISR(TIMER1_OVF_vect) // 1 second time delay
  95a:	8f e0       	ldi	r24, 0x0F	; 15
  95c:	0e 94 3e 02 	call	0x47c	; 0x47c <lcd_gotoxy>
             lcd_putc(countdown_1+48); // Displaying its character value
- 960:	80 91 1e 01 	lds	r24, 0x011E	; 0x80011e <countdown_1>
+ 960:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <countdown_1>
  964:	80 5d       	subi	r24, 0xD0	; 208
  966:	0e 94 4c 02 	call	0x498	; 0x498 <lcd_putc>
             countdown_1--; //  Decrease in a second
- 96a:	80 91 1e 01 	lds	r24, 0x011E	; 0x80011e <countdown_1>
- 96e:	90 91 1f 01 	lds	r25, 0x011F	; 0x80011f <countdown_1+0x1>
+ 96a:	80 91 0e 01 	lds	r24, 0x010E	; 0x80010e <countdown_1>
+ 96e:	90 91 0f 01 	lds	r25, 0x010F	; 0x80010f <countdown_1+0x1>
  972:	01 97       	sbiw	r24, 0x01	; 1
- 974:	90 93 1f 01 	sts	0x011F, r25	; 0x80011f <countdown_1+0x1>
- 978:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <countdown_1>
+ 974:	90 93 0f 01 	sts	0x010F, r25	; 0x80010f <countdown_1+0x1>
+ 978:	80 93 0e 01 	sts	0x010E, r24	; 0x80010e <countdown_1>
         }
 	}
 	if (countdown_2 < 3) // freezes the screen (acting as a delay)
- 97c:	80 91 1c 01 	lds	r24, 0x011C	; 0x80011c <countdown_2>
- 980:	90 91 1d 01 	lds	r25, 0x011D	; 0x80011d <countdown_2+0x1>
+ 97c:	80 91 0c 01 	lds	r24, 0x010C	; 0x80010c <countdown_2>
+ 980:	90 91 0d 01 	lds	r25, 0x010D	; 0x80010d <countdown_2+0x1>
  984:	83 30       	cpi	r24, 0x03	; 3
  986:	91 05       	cpc	r25, r1
  988:	fc f4       	brge	.+62     	; 0x9c8 <__stack+0xc9>
@@ -1500,8 +1500,8 @@ ISR(TIMER1_OVF_vect) // 1 second time delay
 			countdown_2 = 3;
  992:	83 e0       	ldi	r24, 0x03	; 3
  994:	90 e0       	ldi	r25, 0x00	; 0
- 996:	90 93 1d 01 	sts	0x011D, r25	; 0x80011d <countdown_2+0x1>
- 99a:	80 93 1c 01 	sts	0x011C, r24	; 0x80011c <countdown_2>
+ 996:	90 93 0d 01 	sts	0x010D, r25	; 0x80010d <countdown_2+0x1>
+ 99a:	80 93 0c 01 	sts	0x010C, r24	; 0x80010c <countdown_2>
 			reset(); // Reset the display
  99e:	0e 94 3e 01 	call	0x27c	; 0x27c <reset>
 			return;
@@ -1511,8 +1511,8 @@ ISR(TIMER1_OVF_vect) // 1 second time delay
 		{
 		countdown_2--;
  9a4:	01 97       	sbiw	r24, 0x01	; 1
- 9a6:	90 93 1d 01 	sts	0x011D, r25	; 0x80011d <countdown_2+0x1>
- 9aa:	80 93 1c 01 	sts	0x011C, r24	; 0x80011c <countdown_2>
+ 9a6:	90 93 0d 01 	sts	0x010D, r25	; 0x80010d <countdown_2+0x1>
+ 9aa:	80 93 0c 01 	sts	0x010C, r24	; 0x80010c <countdown_2>
  9ae:	0c c0       	rjmp	.+24     	; 0x9c8 <__stack+0xc9>
 		if (countdown_1 == -1) // Countdown completed
 		{
