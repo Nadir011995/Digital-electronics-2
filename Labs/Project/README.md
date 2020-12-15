@@ -47,21 +47,21 @@ In order for this application of the door lock system to work, we need:
 ## Code description and simulations
 
 #### Libraries from previous labs:
-* [gpio.c](Previous_Labs_Libraries/gpio.c)
+* [gpio.c](gpio.c)
  
-* [gpio.h](Previous_Labs_Libraries/gpio.h)
+* [gpio.h](gpio.h)
  
-* [lcd.c](Previous_Labs_Libraries/lcd.c)
+* [lcd.c](lcd.c)
  
-* [lcd.h](Previous_Labs_Libraries/lcd.h)
+* [lcd.h](lcd.h)
 
-* [lcd_definitons.h](Previous_Labs_Libraries/lcd_definitons.h)
+* [lcd_definitons.h](lcd_definitons.h)
 
-* [timer.h](Previous_Labs_Libraries/timer.h)
+* [timer.h](timer.h)
 
-* [uart.c](Previous_Labs_Libraries/uart.c)
+* [uart.c](uart.c)
  
-* [uart.h](Previous_Labs_Libraries/uart.h)
+* [uart.h](uart.h)
 
 
 
