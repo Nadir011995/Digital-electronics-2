@@ -76,12 +76,12 @@ In order for this application of the door lock system to work, we need:
 #### The functions in our own the keypad library:
 
 *	[void keypad()](Keypad.c): The pressed keypad is scanned and stored in a char array variable.
-*	void Check_password(): The entered password will be compared with the correct passcode
-*	void Check_password_1(): The same implementation as the previous function. Here we will compare the second correct passcode. 
-*	void Check_password_2(): The same implementation as the previous function. Here we will compare the second correct passcode. 
-*	void reset(): This function is for cleaning and resetting the display. The variables are set to their initial state. The audio is deactivated.
-*	void entry_denied(): This function shows, the message “Wrong Password” on the display. This function operates when the entered passwords are incorrect. The audio is activated.
-* void entry_accepted(): If the entered password matches with the correct passcodes, this function will be operated. The message e.g “Welcome Mr. Thomas” is shown on the display. The relay will be activated. 
+*	[void Check_password()](Keypad.c): The entered password will be compared with the correct passcode
+*	[void Check_password_1()](Keypad.c): The same implementation as the previous function. Here we will compare the second correct passcode. 
+*	[void Check_password_2()](Keypad.c): The same implementation as the previous function. Here we will compare the second correct passcode. 
+*	[void reset()](): This function is for cleaning and resetting the display. The variables are set to their initial state. The audio is deactivated.
+*	[void entry_denied()](Keypad.c): This function shows, the message “Wrong Password” on the display. This function operates when the entered passwords are incorrect. The audio is activated.
+* [void entry_accepted()]:(Keypad.c) If the entered password matches with the correct passcodes, this function will be operated. The message e.g “Welcome Mr. Thomas” is shown on the display. The relay will be activated. 
 
 #### The interrupt handlers in main.c: 
 
@@ -105,3 +105,6 @@ In order for this application of the door lock system to work, we need:
 2.  [What is a Relay? How does a Relay works?](https://www.youtube.com/watch?v=1_YfuH_AcxQ)
 3.  [How to connect the relay and transistor with microcontroller](http://electronicsdrive.blogspot.com/2015/03/how-to-calculate-base-resistance.html)
 4.  [ATmega32 + LCD + Keypad Interface](https://extremeelectronics.co.in/avr-tutorials/4x3-matrix-keypad-interface-avr-tutorial/)
+5.  [Example of keypad.h which can give us an overview](https://playground.arduino.cc/Code/Keypad/)
+6.  [Transistor audio connection](https://theorycircuit.com/simple-single-transistor-audio-amplifier-circuit/)
+7.  [ASCII](http://www.asciitable.com/)
